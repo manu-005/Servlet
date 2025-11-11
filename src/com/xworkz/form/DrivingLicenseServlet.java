@@ -31,6 +31,8 @@ public class DrivingLicenseServlet extends GenericServlet {
         String height =servletRequest.getParameter("height");
         String status =servletRequest.getParameter("status");
 
+        servletResponse.getWriter().println("Driving License form filled successfully..");
+
         System.out.println("Full name :" + fname);
         System.out.println("Full name :" + mname);
         System.out.println("Last name :" + lname);

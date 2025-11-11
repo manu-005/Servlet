@@ -28,6 +28,7 @@ public class RealestateBuyerServlet extends GenericServlet {
         String state =servletRequest.getParameter("state");
         String pincode =servletRequest.getParameter("pincode");
 
+        servletResponse.getWriter().println("Buyer form is Successfully  filled..");
         System.out.println("Full name :" + fname);
         System.out.println("Last name :" + lname);
         System.out.println("E mail:" + email);

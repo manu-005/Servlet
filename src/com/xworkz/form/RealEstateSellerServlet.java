@@ -6,6 +6,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
+import java.util.Comparator;
 
 @WebServlet(urlPatterns = "/seller", loadOnStartup = 1)
 public class RealEstateSellerServlet extends GenericServlet {
@@ -13,6 +14,7 @@ public class RealEstateSellerServlet extends GenericServlet {
     public RealEstateSellerServlet() {
         System.out.println("Real Estate Seller Servlet Object Created ..");
     }
+
 
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
@@ -28,6 +30,7 @@ public class RealEstateSellerServlet extends GenericServlet {
         String range = servletRequest.getParameter("range");
         String firstTime = servletRequest.getParameter("firstTime");
 
+        servletResponse.getWriter().println("Seller form is filled successfully");
 
         System.out.println("Full name :" + aname);
         System.out.println("Last name :" + acname);

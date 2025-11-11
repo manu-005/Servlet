@@ -32,6 +32,8 @@ public class PatientServlet extends GenericServlet {
         String status =servletRequest.getParameter("status");
         String desc =servletRequest.getParameter("desc");
 
+        servletResponse.getWriter().println("Patient added successfully..");
+
         System.out.println("Full name :" + fname);
         System.out.println("Last name :" + lname);
         System.out.println("Date of Birth :" + dob);
