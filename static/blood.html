@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blood Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5">
+    <form action="blood" method="post" class="p-4 border rounded shadow-sm bg-light">
+        <h1 class="mb-4 text-center text-danger">❤️ Blood Booking Request</h1>
+
+        <div class="mb-3">
+            <label for="urName" class="form-label">Your Name :</label>
+            <input type="text" name="urName" id="urName" class="form-control" placeholder="Enter your full name">
+        </div>
+
+        <div class="mb-3">
+            <label for="group" class="form-label">Blood Group :</label>
+            <input type="text" name="group" id="group" class="form-control" placeholder="e.g., A+, O-, AB+">
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Select Quantity :</label>
+            <select name="quantity" id="quantity" class="form-select">
+                <option value="100 ml">100 ml</option>
+                <option value="150 ml" selected>150 ml</option>
+                <option value="other">Other (Specify in instructions)</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="inst" class="form-label">Describe Your Any Instruction :</label>
+            <textarea name="inst" id="inst" class="form-control" rows="3" placeholder="e.g., Hospital name, specific quantity if 'other' was selected..."></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label d-block">Payment Mode :</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pay" id="payCash" value="Cash">
+                <label class="form-check-label" for="payCash">Cash</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pay" id="payUPI" value="UPI" checked>
+                <label class="form-check-label" for="payUPI">UPI</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pay" id="payCard" value="Card">
+                <label class="form-check-label" for="payCard">Card</label>
+            </div>
+        </div>
+
+        <div class="d-grid">
+            <input type="submit" name="Submit" value="Submit Booking Request" class="btn btn-danger btn-lg">
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

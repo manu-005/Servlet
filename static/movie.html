@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Ticket Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center text-primary mb-4">🎬 Movie Ticket Booking</h2>
+
+        <form action="movie" method="post">
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Movie Name</label>
+                <input type="text" name="mName" class="form-control" placeholder="Enter movie name" required>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Your Name</label>
+                <input type="text" name="urName" class="form-control" placeholder="Enter your name" required>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Select Location</label>
+                <select name="loc" class="form-select">
+                    <option selected disabled>-- Choose a location --</option>
+                    <option>Bangalore</option>
+                    <option>Mumbai</option>
+                    <option>Chennai</option>
+                    <option>Delhi</option>
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Describe Your Queries</label>
+                <textarea name="query" class="form-control" rows="3" placeholder="Any requests or special notes..."></textarea>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label fw-bold d-block">Select Your Seat</label>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="seat" value="Regular" class="form-check-input" required>
+                    <label class="form-check-label">Regular</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="seat" value="Balcony" class="form-check-input">
+                    <label class="form-check-label">Balcony</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="seat" value="VIP" class="form-check-input">
+                    <label class="form-check-label">VIP</label>
+                </div>
+            </div>
+
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-5">Book Ticket</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
