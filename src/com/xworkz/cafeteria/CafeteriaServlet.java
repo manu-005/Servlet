@@ -1,5 +1,9 @@
 package com.xworkz.cafeteria;
 
+import com.xworkz.cafeteria.dto.CafeteriaDTO;
+import com.xworkz.cafeteria.service.CafeteriaImpl;
+import com.xworkz.cafeteria.service.CafeteriaInterface;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,5 +43,11 @@ public class CafeteriaServlet extends HttpServlet {
 
        RequestDispatcher requestDispatcher =  req.getRequestDispatcher("CafeteriaResult.jsp");
        requestDispatcher.forward(req,resp);
+
+        CafeteriaDTO cafeteriaDTO = new CafeteriaDTO(name,loc,type,price,fNm,owNm,gstNo);
+
+        CafeteriaInterface cafeteriaInterface = new CafeteriaImpl();
+        cafeteriaInterface.validateDTO(cafeteriaDTO);
+
     }
 }
