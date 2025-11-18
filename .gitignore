@@ -1,33 +1,74 @@
-### IntelliJ IDEA ###
+##############################
+#      OS / SYSTEM FILES     #
+##############################
+
+# macOS
+.DS_Store
+
+
+##############################
+#        IDE SETTINGS        #
+##############################
+
+# IntelliJ IDEA
+.idea/
+*.iml
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### Eclipse ###
+# SmartTomcat plugin
+.smarttomcat/
+
+# Eclipse
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 .sts4-cache
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
+# VS Code
 .vscode/
 
-### Mac OS ###
-.DS_Store
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
-.idea/
-.smarttomcat/
-*.iml
+
+##############################
+#        JAVA BUILD          #
+##############################
+
+# Maven (if used)
+target/
+
+# Gradle (if used)
+.gradle/
+build/
+
+# Logs
+*.log
+
+
+##############################
+#     TEMP / GENERATED       #
+##############################
+
+# Temporary files
+*.tmp
+*.swp
+
+# Backup files
+*.bak
+*.old
+
+# Generated class files
+*.class
