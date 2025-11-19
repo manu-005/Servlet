@@ -3,6 +3,7 @@ package com.xworkz.jspChaining;
 import com.xworkz.jspChaining.dto.CoffeeDTO;
 import com.xworkz.jspChaining.service.CoffeeImpl;
 import com.xworkz.jspChaining.service.CoffeeInterface;
+import com.xworkz.jspChaining.validateException.ValidException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,6 +20,9 @@ public class CoffeeServlet extends HttpServlet {
         System.out.println("Coffee Servlet Object created..");
     }
 
+    CoffeeInterface coffeeInterface = new CoffeeImpl();
+
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("doPost Started");
@@ -34,19 +38,29 @@ public class CoffeeServlet extends HttpServlet {
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("CoffeeFormResult.jsp");
 
-        req.setAttribute("type",type);
-        req.setAttribute("price",price);
-        req.setAttribute("quantity",quantity);
-        req.setAttribute("former",former);
-        req.setAttribute("loc",loc);
-
-        requestDispatcher.forward(req,resp);
-        System.out.println("doPost closed..");
 
         CoffeeDTO coffeeDTO = new CoffeeDTO(type,price,quantity,former,loc);
 
-        CoffeeInterface coffeeInterface = new CoffeeImpl();
-        coffeeInterface.validateDetails(coffeeDTO);
+        try {
+            coffeeInterface.validateDetails(coffeeDTO);
+            System.out.println("valid");
+            req.setAttribute("success" , "succesfully added..");
+
+            req.setAttribute("type",type);
+            req.setAttribute("price",price);
+            req.setAttribute("quantity",quantity);
+            req.setAttribute("former",former);
+            req.setAttribute("loc",loc);
+
+
+        } catch (ValidException e) {
+            req.setAttribute("unsuccess" , "Enter Valid details..");
+
+            System.err.println("invalid");
+        }
+
+        requestDispatcher.forward(req,resp);
+        System.out.println("doPost closed..");
     }
 }
 
