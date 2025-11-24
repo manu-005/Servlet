@@ -1,5 +1,7 @@
 package com.xworkz.survey.servlet;
 
+import com.xworkz.survey.dao.SurveyDAOImpl;
+import com.xworkz.survey.dao.SurveyDAOInterface;
 import com.xworkz.survey.dto.SurveyDTO;
 import com.xworkz.survey.exception.SurveyValidException;
 import com.xworkz.survey.service.SurveyServiceImpl;
@@ -19,6 +21,9 @@ public class SurveyServlet extends HttpServlet {
     public SurveyServlet(){
         System.out.println("survey servlet object created");
     }
+
+    SurveyDAOInterface surveyDAOInterface = new SurveyDAOImpl();
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -99,7 +104,7 @@ public class SurveyServlet extends HttpServlet {
         SurveyServiceInterface surveyServiceInterface = new SurveyServiceImpl();
         try {
             surveyServiceInterface.validate(surveyDTO);
-            req.setAttribute("success","successfully validated...");
+            req.setAttribute("success","Successfully Filled...");
 
             req.setAttribute("name",name);
             req.setAttribute("occupation",occupation);
@@ -164,14 +169,19 @@ public class SurveyServlet extends HttpServlet {
             req.setAttribute("cowNo",cowNo);
             req.setAttribute("share",share);
 
+            surveyDAOInterface.saveData(surveyDTO);
+
         } catch (SurveyValidException e) {
-            req.setAttribute("fail","enter valid details...");
+            req.setAttribute("fail","Invalid..! Enter valid details...");
             System.out.println("in  valid..");
         }
 
 
         RequestDispatcher requestDispatcher= req.getRequestDispatcher("SurveyResult.jsp");
        requestDispatcher.forward(req,resp);
+
+
+
 
         System.out.println("do post closed");
     }
