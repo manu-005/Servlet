@@ -123,12 +123,10 @@ function validateForm() {
     }
 }
 
-
 document.getElementById("email").addEventListener("input", validateForm);
 document.getElementById("lookingFor").addEventListener("change", validateForm);
 document.getElementById("height").addEventListener("input", validateForm);
 document.getElementById("personName").addEventListener("input", validateForm);
-
 </script>
 
 </body>
