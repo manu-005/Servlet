@@ -31,9 +31,13 @@ public class BookServlet extends HttpServlet {
 
         String bName = req.getParameter("bName");
         String aName = req.getParameter("aName");
-        int price = Integer.parseInt(req.getParameter("price"));
-        int noOfCopies = Integer.parseInt(req.getParameter("noOfCopies"));
-        boolean isAvailable = Boolean.parseBoolean(req.getParameter("isAvailable"));
+        String price = req.getParameter("price");
+        String noOfCopies = req.getParameter("noOfCopies");
+        String isAvailable = req.getParameter("isAvailable");
+
+        int p = Integer.parseInt(price);
+        int copy = Integer.parseInt(noOfCopies);
+        boolean avail = Boolean.parseBoolean(isAvailable);
 
         System.out.println(bName);
         System.out.println(aName);
@@ -47,7 +51,7 @@ public class BookServlet extends HttpServlet {
         req.setAttribute("noOfCopies", noOfCopies);
         req.setAttribute("isAvailable", isAvailable);
 
-        BookDTO bookDTO = new BookDTO(bName, aName, price, noOfCopies, isAvailable);
+        BookDTO bookDTO = new BookDTO(bName, aName, p, copy, avail);
 
         BookValidateInterface bookValidateInterface = new BookValidateImpl();
         boolean valid = bookValidateInterface.validate(bookDTO);
