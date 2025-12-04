@@ -3,6 +3,7 @@ package com.xworkz.servlet;
 import com.xworkz.dao.BookDAOImpl;
 import com.xworkz.dao.BookDAOInterface;
 import com.xworkz.dto.BookDTO;
+import com.xworkz.exception.BookValidationException;
 import com.xworkz.service.BookValidateImpl;
 import com.xworkz.service.BookValidateInterface;
 
@@ -37,7 +38,7 @@ public class BookServlet extends HttpServlet {
 
         int p = Integer.parseInt(price);
         int copy = Integer.parseInt(noOfCopies);
-        boolean avail = Boolean.parseBoolean(isAvailable);
+        boolean avail = "yes".equalsIgnoreCase(isAvailable);
 
         System.out.println(bName);
         System.out.println(aName);
@@ -53,11 +54,16 @@ public class BookServlet extends HttpServlet {
 
         BookDTO bookDTO = new BookDTO(bName, aName, p, copy, avail);
 
+
         BookValidateInterface bookValidateInterface = new BookValidateImpl();
         boolean valid = bookValidateInterface.validate(bookDTO);
 
         if (valid) {
             bookDAOInterface.saveBookData(bookDTO);
+            req.setAttribute("success","Book Details Successfully Added..");
+
+        }else{
+            req.setAttribute("error","Invalid Details check and insert");
         }
         req.getRequestDispatcher("BookResult.jsp").forward(req, resp);
 

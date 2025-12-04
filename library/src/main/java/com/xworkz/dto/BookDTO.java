@@ -18,7 +18,9 @@ public class BookDTO implements Comparable {
     private String aName;
     private int price;
     private int noOfCopies;
-    private boolean isAvailable;
+
+
+    private boolean available;
 
     @Override
     public int compareTo(Object o) {

@@ -38,6 +38,9 @@
 
         <h2 class="text-center mb-4 text-primary">Book Details</h2>
 
+  <h4 class="text-center mb-4 text-success">${success}</h4>
+  <h4 class="text-center mb-4 text-danger">${error}</h4>
+
         <div class="row mb-2">
             <div class="col-4 fw-bold">Book Name :</div>
             <div class="col-4">${bName}</div>
@@ -76,7 +79,6 @@
         <p class="mb-1">&copy; 2025 Library Management System. All Rights Reserved.</p>
         <p class="mb-0">Designed & Developed by <strong>Manoj Betadur</strong></p>
     </div>
-
 
 <!-- footer -->
 
