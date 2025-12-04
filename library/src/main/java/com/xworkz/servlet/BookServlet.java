@@ -54,7 +54,6 @@ public class BookServlet extends HttpServlet {
 
         BookDTO bookDTO = new BookDTO(bName, aName, p, copy, avail);
 
-
         BookValidateInterface bookValidateInterface = new BookValidateImpl();
         boolean valid = bookValidateInterface.validate(bookDTO);
 

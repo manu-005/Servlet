@@ -40,7 +40,6 @@ public class BookDAOImpl implements BookDAOInterface{
             throw new RuntimeException(e);
         }
 
-
         System.out.println("Book Data Saved successfully..");
     }
 }
