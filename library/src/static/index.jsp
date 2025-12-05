@@ -21,7 +21,7 @@
     <a class="nav-link active" href="#">Browse Books</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link " href="#" > Borrow Book</a>
+    <a class="nav-link " href="SearchByBookName.jsp" >Search Book By Book Name</a>
   </li>
 </ul>
 </div>
