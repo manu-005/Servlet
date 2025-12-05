@@ -55,14 +55,22 @@ public class BookServlet extends HttpServlet {
         BookDTO bookDTO = new BookDTO(bName, aName, p, copy, avail);
 
         BookValidateInterface bookValidateInterface = new BookValidateImpl();
+
         boolean valid = bookValidateInterface.validate(bookDTO);
 
-        if (valid) {
-            bookDAOInterface.saveBookData(bookDTO);
-            req.setAttribute("success","Book Details Successfully Added..");
 
-        }else{
-            req.setAttribute("error","Invalid Details check and insert");
+        if (valid) {
+            System.out.println("valid before  check exist..");
+
+           boolean exist = bookDAOInterface.bNameExist(bookDTO);
+            if (!exist) {
+                System.out.println("check and saved");
+                bookDAOInterface.saveBookData(bookDTO);
+                req.setAttribute("success", "Book Details Successfully Added..");
+            }
+
+        } else {
+            req.setAttribute("error", "Invalid Details check and insert");
         }
         req.getRequestDispatcher("BookResult.jsp").forward(req, resp);
 
