@@ -66,7 +66,7 @@ public class BookServlet extends HttpServlet {
         if (valid) {
             System.out.println("valid before  check exist..");
 
-           boolean exist = bookDAOInterface.bNameExist(bookDTO);
+            boolean exist = bookDAOInterface.bNameExist(bookDTO);
             if (!exist) {
                 System.out.println("check and saved");
                 bookDAOInterface.saveBookData(bookDTO);
@@ -87,7 +87,7 @@ public class BookServlet extends HttpServlet {
 
         resp.setContentType("text/html");
 
-       String bName= req.getParameter("bName");
+        String bName = req.getParameter("bName");
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -97,40 +97,41 @@ public class BookServlet extends HttpServlet {
 
 
         String search = " select * from book where bName = ?;";
-       try(Connection connection = DriverManager.getConnection(BookConstants.URL.getS(),BookConstants.USERNAME.getS(), BookConstants.PWD.getS());
-           PreparedStatement statement = connection.prepareStatement(search)){
+        try (Connection connection = DriverManager.getConnection(BookConstants.URL.getS(), BookConstants.USERNAME.getS(), BookConstants.PWD.getS());
+             PreparedStatement statement = connection.prepareStatement(search)) {
 
-           SearchByBookNameDTO searchByBookNameDTO = new SearchByBookNameDTO(bName);
-           System.out.println("connection started..");
-           statement.setString(1,bName);
-//           statement.setString(1,searchByBookNameDTO.getBName());
-        ResultSet resultSet = statement.executeQuery();
+            SearchByBookNameDTO searchByBookNameDTO = new SearchByBookNameDTO(bName);
+            System.out.println("connection started..");
+//           statement.setString(1,bName);
 
-        while(resultSet.next()){
-            System.out.println("while fetching data ...");
-            String bNm= resultSet.getString(1);
-            String aNm= resultSet.getString(2);
-            int price= resultSet.getInt(3);
-            int copy= resultSet.getInt(4);
-            boolean avail= resultSet.getBoolean(5);
+            statement.setString(1, searchByBookNameDTO.getBName());
+            ResultSet resultSet = statement.executeQuery();
 
-            req.setAttribute("bNm",bNm);
-            req.setAttribute("aNm",aNm);
-            req.setAttribute("price",price);
-            req.setAttribute("copy",copy);
-            req.setAttribute("avail",avail);
+            while (resultSet.next()) {
+                System.out.println("while fetching data ...");
+                String bNm = resultSet.getString(1);
+                String aNm = resultSet.getString(2);
+                int price = resultSet.getInt(3);
+                int copy = resultSet.getInt(4);
+                boolean avail = resultSet.getBoolean(5);
+
+                req.setAttribute("bNm", bNm);
+                req.setAttribute("aNm", aNm);
+                req.setAttribute("price", price);
+                req.setAttribute("copy", copy);
+                req.setAttribute("avail", avail);
 
 
-            System.out.println("send to search result ...");
+                System.out.println("send to search result ...");
 
-            req.getRequestDispatcher("SearchByBookName.jsp").forward(req,resp);
+                req.getRequestDispatcher("SearchByBookName.jsp").forward(req, resp);
 
-            System.out.println("while ended...");
+                System.out.println("while ended...");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-
-       } catch (SQLException e) {
-           throw new RuntimeException(e);
-       }
 
         System.out.println("do get ended...");
     }

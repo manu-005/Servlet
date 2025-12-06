@@ -5,6 +5,7 @@ import com.xworkz.dto.BookDTO;
 import com.xworkz.exception.DataNotSavaedException;
 
 import java.sql.*;
+import java.util.Optional;
 
 public class BookDAOImpl implements BookDAOInterface {
 
@@ -40,7 +41,7 @@ public class BookDAOImpl implements BookDAOInterface {
         System.out.println("Book Data Saved successfully..");
     }
 
-    public boolean bNameExist(BookDTO bookDTO) {
+    public Optional<BookDTO> bNameExist(BookDTO bookDTO) {
         boolean exist = false;
 
 
@@ -72,6 +73,6 @@ public class BookDAOImpl implements BookDAOInterface {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return exist;
+        return Optional.of(bookDTO);
     }
 }
