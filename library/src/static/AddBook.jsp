@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Library Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
-<body class="bg-light">
+<body>
 <!-- nav bar -->
 
 <div class=" p-3  mb-2 bg-primary-subtle text-primary-emphasis">
@@ -22,10 +21,11 @@
     <a class="nav-link active" href="#">Browse Books</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link " href="#" > Borrow Book</a>
+    <a class="nav-link " href="SearchByBookName.jsp" >Search Book By Book Name</a>
   </li>
 </ul>
 </div>
+
 
 
 <!-- end navbar -->
