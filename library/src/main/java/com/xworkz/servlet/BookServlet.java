@@ -102,8 +102,8 @@ public class BookServlet extends HttpServlet {
 
            SearchByBookNameDTO searchByBookNameDTO = new SearchByBookNameDTO(bName);
            System.out.println("connection started..");
-//           statement.setString(1,bName);
-           statement.setString(1,searchByBookNameDTO.getBName());
+           statement.setString(1,bName);
+//           statement.setString(1,searchByBookNameDTO.getBName());
         ResultSet resultSet = statement.executeQuery();
 
         while(resultSet.next()){
@@ -128,12 +128,11 @@ public class BookServlet extends HttpServlet {
             System.out.println("while ended...");
         }
 
-
        } catch (SQLException e) {
            throw new RuntimeException(e);
        }
 
-
         System.out.println("do get ended...");
     }
+
 }
