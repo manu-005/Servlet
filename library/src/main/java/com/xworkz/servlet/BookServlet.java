@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.transform.Result;
 import java.io.IOException;
 import java.sql.*;
+import java.util.Optional;
 
 @WebServlet(urlPatterns = "/book", loadOnStartup = 1)
 public class BookServlet extends HttpServlet {
@@ -66,8 +67,8 @@ public class BookServlet extends HttpServlet {
         if (valid) {
             System.out.println("valid before  check exist..");
 
-            boolean exist = bookDAOInterface.bNameExist(bookDTO);
-            if (!exist) {
+            Optional<BookDTO> exist = bookDAOInterface.bNameExist( bookDTO);
+            if (!exist.isPresent()) {
                 System.out.println("check and saved");
                 bookDAOInterface.saveBookData(bookDTO);
                 req.setAttribute("success", "Book Details Successfully Added..");
