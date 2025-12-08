@@ -29,6 +29,7 @@ public class UpdateBookServlet extends HttpServlet {
 
         String nm = req.getParameter("bNm");
 
+
         BookDTO bookDTO=new BookDTO(nm);
 
         req.getRequestDispatcher("UpdateBook.jsp").forward(req,resp);
