@@ -22,6 +22,9 @@ public class BookDTO implements Comparable {
 
     private boolean available;
 
+    public BookDTO(String nm) {
+    }
+
     @Override
     public int compareTo(Object o) {
         return 0;

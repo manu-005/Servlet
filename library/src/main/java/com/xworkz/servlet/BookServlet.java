@@ -137,12 +137,12 @@ public class BookServlet extends HttpServlet {
                 BookDTO bookDTO = new BookDTO(bNm,aNm,price,copy,avail);
                 req.setAttribute("dto", bookDTO);
 
-//
-//                req.setAttribute("bNm", bNm);
-//                req.setAttribute("aNm", aNm);
-//                req.setAttribute("price", price);
-//                req.setAttribute("copy", copy);
-//                req.setAttribute("avail", avail);
+
+                req.setAttribute("bNm", bNm);
+                req.setAttribute("aNm", aNm);
+                req.setAttribute("price", price);
+                req.setAttribute("copy", copy);
+                req.setAttribute("avail", avail);
 
 
                 System.out.println("send to search result ...");

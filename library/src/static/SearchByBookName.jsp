@@ -68,21 +68,23 @@
 
             <tbody>
                 <tr>
-                    <td><strong>${dto.bNm}</strong></td>
-                    <td>${dto.aNm}</td>
-                    <td>${dto.price}</td>
-                    <td>${dto.copy}</td>
-                    <td>${dto.avail}</td>
-                    <td><a href="AddBook.jsp">edit</a></td>
+                    <td><strong>${bNm}</strong></td>
+                    <td>${aNm}</td>
+                    <td>${price}</td>
+                    <td>${copy}</td>
+                    <td>${avail}</td>
+
 
                 </tr>
+
+
             </tbody>
         </table>
-
+<span><a href="update?bNm=${bNm}">edit</a></span>
     </div>
 </div>
 
-
+reslt : ${dto}
 
 
 
