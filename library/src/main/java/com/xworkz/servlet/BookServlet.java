@@ -134,11 +134,15 @@ public class BookServlet extends HttpServlet {
                 int copy = resultSet.getInt(4);
                 boolean avail = resultSet.getBoolean(5);
 
-                req.setAttribute("bNm", bNm);
-                req.setAttribute("aNm", aNm);
-                req.setAttribute("price", price);
-                req.setAttribute("copy", copy);
-                req.setAttribute("avail", avail);
+                BookDTO bookDTO = new BookDTO(bNm,aNm,price,copy,avail);
+                req.setAttribute("dto", bookDTO);
+
+//
+//                req.setAttribute("bNm", bNm);
+//                req.setAttribute("aNm", aNm);
+//                req.setAttribute("price", price);
+//                req.setAttribute("copy", copy);
+//                req.setAttribute("avail", avail);
 
 
                 System.out.println("send to search result ...");

@@ -46,13 +46,15 @@
             <input type="submit" value="Clear" name="submit" class="btn btn-primary w-100">
 
 
+
+
 <div class="container mt-5">
 
     <div class="card shadow-lg p-4">
 
         <h2 class="text-center mb-4 text-primary">Book Details</h2>
 
-<div >
+
         <table class="table table-bordered table-striped text-center">
             <thead class="table-primary">
                 <tr>
@@ -66,20 +68,21 @@
 
             <tbody>
                 <tr>
-                    <td><strong>${bNm}</strong></td>
-                    <td>${aNm}</td>
-                    <td>${price}</td>
-                    <td>${copy}</td>
-                    <td>${avail}</td>
+                    <td><strong>${dto.bNm}</strong></td>
+                    <td>${dto.aNm}</td>
+                    <td>${dto.price}</td>
+                    <td>${dto.copy}</td>
+                    <td>${dto.avail}</td>
                     <td><a href="AddBook.jsp">edit</a></td>
 
                 </tr>
             </tbody>
         </table>
-        <div>
 
     </div>
 </div>
+
+
 
 
 
