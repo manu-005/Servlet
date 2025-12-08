@@ -6,6 +6,7 @@ public class BookValidateImpl implements BookValidateInterface {
     @Override
     public boolean validate(BookDTO bookDTO) {
         boolean invalid = false;
+
         if (bookDTO != null) {
 
             if (bookDTO.getBName() == null || bookDTO.getBName().length() <= 2) {

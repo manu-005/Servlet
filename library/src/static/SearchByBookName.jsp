@@ -41,7 +41,9 @@
                 <input type="text" class="form-control" name="bName" id="bName" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Search</button>
+            <input type="submit" value="Submit" name="submit" class="btn btn-primary w-100">
+
+            <input type="submit" value="Clear" name="submit" class="btn btn-primary w-100">
 
 
 <div class="container mt-5">
@@ -50,6 +52,7 @@
 
         <h2 class="text-center mb-4 text-primary">Book Details</h2>
 
+<div >
         <table class="table table-bordered table-striped text-center">
             <thead class="table-primary">
                 <tr>
@@ -68,9 +71,12 @@
                     <td>${price}</td>
                     <td>${copy}</td>
                     <td>${avail}</td>
+                    <td><a href="AddBook.jsp">edit</a></td>
+
                 </tr>
             </tbody>
         </table>
+        <div>
 
     </div>
 </div>

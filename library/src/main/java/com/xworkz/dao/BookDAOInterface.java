@@ -6,6 +6,9 @@ import java.util.Optional;
 
 public interface BookDAOInterface {
 
-     void saveBookData(BookDTO bookDTO);
-    Optional<BookDTO> bNameExist(BookDTO bookDTO);
+     boolean saveBookData(BookDTO bookDTO);
+
+    boolean bNameExist(BookDTO bookDTO) ;
+
+
 }

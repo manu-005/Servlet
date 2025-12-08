@@ -11,8 +11,9 @@ public class BookDAOImpl implements BookDAOInterface {
 
 
     @Override
-    public void saveBookData(BookDTO bookDTO) {
+    public boolean saveBookData(BookDTO bookDTO) {
         System.out.println("Save Method started...");
+        boolean save=false;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -33,18 +34,22 @@ public class BookDAOImpl implements BookDAOInterface {
 
             int rows = statement.executeUpdate();
             System.out.println("rows :" + rows);
+            if (rows == 1) {
+
+                save =true;
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
         System.out.println("Book Data Saved successfully..");
+
+        return save;
     }
 
-    public Optional<BookDTO> bNameExist(BookDTO bookDTO) {
-        boolean exist = false;
-
-
+    public boolean bNameExist(BookDTO bookDTO) {
+boolean exist = true;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -52,6 +57,7 @@ public class BookDAOImpl implements BookDAOInterface {
         }
 
         String existBName = " select 1 from book where bName=?;";
+
         try (Connection connection = DriverManager.getConnection(BookConstants.URL.getS(), BookConstants.USERNAME.getS(), BookConstants.PWD.getS());
              PreparedStatement statement = connection.prepareStatement(existBName)) {
 
@@ -61,10 +67,14 @@ public class BookDAOImpl implements BookDAOInterface {
             System.out.println("connection started");
             try {
                 if (resultSet.next()) {
-                    System.out.println("Already exist..");
-                    exist=true;
+                        exist = true;
+                        System.out.println("Already exist..");
 
-                    System.out.println("connection ended and checked exist");
+                    System.out.println("connection ended and checked already exist");
+                }
+                else{
+                    exist=false;
+                    System.out.println("not exist...");
                 }
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -73,6 +83,6 @@ public class BookDAOImpl implements BookDAOInterface {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return Optional.of(bookDTO);
+        return exist;
     }
 }

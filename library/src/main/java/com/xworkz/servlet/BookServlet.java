@@ -58,28 +58,46 @@ public class BookServlet extends HttpServlet {
         req.setAttribute("isAvailable", isAvailable);
 
         BookDTO bookDTO = new BookDTO(bName, aName, p, copy, avail);
+        System.out.println("form data sent to dto..");
 
         BookValidateInterface bookValidateInterface = new BookValidateImpl();
-
         boolean valid = bookValidateInterface.validate(bookDTO);
 
-
         if (valid) {
-            System.out.println("valid before  check exist..");
 
-            Optional<BookDTO> exist = bookDAOInterface.bNameExist( bookDTO);
-            if (!exist.isPresent()) {
-                System.out.println("check and saved");
-                bookDAOInterface.saveBookData(bookDTO);
-                req.setAttribute("success", "Book Details Successfully Added..");
+            System.out.println("validation done and  started  checking exist or not....");
+
+            boolean exist = bookDAOInterface.bNameExist(bookDTO);
+
+            if (!exist) {
+                System.out.println("check and sent to save..");
+              boolean save =  bookDAOInterface.saveBookData(bookDTO);
+               if(save){
+
+                   req.setAttribute("success", "Book Details Successfully Added..");
+                   req.getRequestDispatcher("BookResult.jsp").forward(req, resp);
+
+               }else{
+
+                   req.setAttribute("error", "Data Not Saved...something went wrong in save");
+                   req.getRequestDispatcher("BookResult.jsp").forward(req, resp);
+               }
+
+            }
+            else{
+                req.setAttribute("error", "Book Name is Already Exist...");
+                req.getRequestDispatcher("BookResult.jsp").forward(req, resp);
+
             }
 
-        } else {
-            req.setAttribute("error", "Invalid Details check and insert");
-        }
-        req.getRequestDispatcher("BookResult.jsp").forward(req, resp);
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            else {
+            req.setAttribute("error", "Invalid Book Details  check and insert...");
 
-        System.out.println("do post Started..");
+            req.getRequestDispatcher("InvalidBookDetails.jsp").forward(req, resp);
+
+        }
+
+        System.out.println("do post Ended..");
     }
 
     @Override
@@ -101,11 +119,11 @@ public class BookServlet extends HttpServlet {
         try (Connection connection = DriverManager.getConnection(BookConstants.URL.getS(), BookConstants.USERNAME.getS(), BookConstants.PWD.getS());
              PreparedStatement statement = connection.prepareStatement(search)) {
 
-            SearchByBookNameDTO searchByBookNameDTO = new SearchByBookNameDTO(bName);
+//            SearchByBookNameDTO searchByBookNameDTO = new SearchByBookNameDTO(bName);
             System.out.println("connection started..");
-//           statement.setString(1,bName);
+           statement.setString(1,bName);
 
-            statement.setString(1, searchByBookNameDTO.getBName());
+//            statement.setString(1, searchByBookNameDTO.getBName());
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
