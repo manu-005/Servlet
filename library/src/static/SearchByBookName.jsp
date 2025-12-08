@@ -40,7 +40,7 @@
                 <label class="form-label">Enter Book Name</label>
                 <input type="text" class="form-control" name="bName" id="bName" required>
             </div>
-
+<span style="color:red">${error}</span>
             <input type="submit" value="Submit" name="submit" class="btn btn-primary w-100">
 
             <input type="submit" value="Clear" name="submit" class="btn btn-primary w-100">

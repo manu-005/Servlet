@@ -126,7 +126,7 @@ public class BookServlet extends HttpServlet {
 //            statement.setString(1, searchByBookNameDTO.getBName());
             ResultSet resultSet = statement.executeQuery();
 
-            while (resultSet.next()) {
+            if (resultSet.next()) {
                 System.out.println("while fetching data ...");
                 String bNm = resultSet.getString(1);
                 String aNm = resultSet.getString(2);
@@ -146,6 +146,12 @@ public class BookServlet extends HttpServlet {
                 req.getRequestDispatcher("SearchByBookName.jsp").forward(req, resp);
 
                 System.out.println("while ended...");
+            }
+            else{
+                req.setAttribute("error", "Book is not Exist..");
+
+                req.getRequestDispatcher("SearchByBookName.jsp").forward(req, resp);
+
             }
 
         } catch (SQLException e) {
