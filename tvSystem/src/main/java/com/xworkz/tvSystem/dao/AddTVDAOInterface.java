@@ -2,7 +2,7 @@ package com.xworkz.tvSystem.dao;
 
 import com.xworkz.tvSystem.dto.AddTvDTO;
 
-public interface AddTVInterface {
+public interface AddTVDAOInterface {
 
     boolean save(AddTvDTO addTvDTO);
 }

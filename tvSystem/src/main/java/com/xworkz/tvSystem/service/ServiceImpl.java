@@ -1,5 +1,7 @@
 package com.xworkz.tvSystem.service;
 
+import com.xworkz.tvSystem.dao.AddTVDAOImpl;
+import com.xworkz.tvSystem.dao.AddTVDAOInterface;
 import com.xworkz.tvSystem.dto.AddTvDTO;
 
 public class ServiceImpl implements ServiceInterface {
@@ -18,8 +20,16 @@ public class ServiceImpl implements ServiceInterface {
                 System.out.println("size is invalid");
             } else {
                 System.out.println("validation done and send to dao..");
-                valid = true;
+//
 
+         AddTVDAOInterface addTVDAOInterface = new AddTVDAOImpl();
+          boolean saved = addTVDAOInterface.save(addTvDTO);
+          if(saved){
+              System.out.println("data saved in DB ..");
+              valid = true;
+          }else{
+              System.out.println("data valid but not stored in DB");
+          }
 
             }
         }
