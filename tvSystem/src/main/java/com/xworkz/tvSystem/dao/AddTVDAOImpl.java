@@ -48,6 +48,40 @@ public class AddTVDAOImpl implements AddTVDAOInterface {
     }
 
     @Override
+    public boolean update(AddTvDTO addTvDTO) {
+
+        boolean updated = false;
+
+        String q = "update  tv set name=?, brand=?,size=?, avail=? where id=?;";
+
+
+        try (Connection connection = DriverManager.getConnection(DbConstants.URL.getS(), DbConstants.USERNAME.getS(), DbConstants.PWD.getS());
+             PreparedStatement statement = connection.prepareStatement(q)) {
+
+            System.out.println("connection started..");
+            statement.setString(1, addTvDTO.getName());
+            statement.setString(2, addTvDTO.getBrand());
+            statement.setDouble(3, addTvDTO.getSize());
+            statement.setBoolean(4, addTvDTO.getAvail());
+
+            statement.setInt(5,addTvDTO.getId());
+
+            int rows = statement.executeUpdate();
+            System.out.println("rows :" + rows);
+            if (rows == 1) {
+                System.out.println("updated in DB successfully..");
+                updated = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return updated;
+
+
+    }
+
+    @Override
     public Optional<AddTvDTO> fetchByName(SearchTVDTO searchTVDTO) {
 
         String fetch = " SELECT * FROM tv where name=?;";
@@ -57,8 +91,8 @@ public class AddTVDAOImpl implements AddTVDAOInterface {
             System.out.println("connection started..");
             statement.setString(1, searchTVDTO.getName());
             ResultSet set = statement.executeQuery();
-
-            while(set.next()){
+//boolean notExist = set.next();
+            if(set.next()){
                 System.out.println("get table data..");
                 int id = set.getInt(1);
                 String name =set.getString(2);
@@ -66,18 +100,20 @@ public class AddTVDAOImpl implements AddTVDAOInterface {
                 double size = set.getDouble(4);
                 boolean avail = set.getBoolean(5);
 
+
                 AddTvDTO addTvDTO = new AddTvDTO(id,name,brand,size,avail);
                 System.out.println(" data send back to service..");
                 return Optional.of(addTvDTO);
 
 
 
+            }else{
+                return Optional.empty();
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-return Optional.empty();
     }
 }

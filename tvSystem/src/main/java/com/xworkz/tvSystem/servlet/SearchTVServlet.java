@@ -32,16 +32,21 @@ public class SearchTVServlet extends HttpServlet {
         System.out.println("search .."+searchedAndGet);
 
 
+        if(searchedAndGet.isPresent()){
+
             req.setAttribute("dto",searchedAndGet.get());
 
             req.getRequestDispatcher("SearchedResult.jsp").forward(req,resp);
 
             System.out.println("searched"+searchedAndGet);
-//
-//            System.out.println("not fetch data..");
-//
-//            req.getRequestDispatcher("SearchedResult.jsp").forward(req,resp);
-//
+        }else{
+            req.setAttribute("error","invalid ...not exists..");
+            System.out.println("not fetch data..");
+
+            req.getRequestDispatcher("SearchedResult.jsp").forward(req,resp);
+
+        }
+
 
         System.out.println("search tv doget ended..");
     }

@@ -9,5 +9,7 @@ public interface AddTVDAOInterface {
 
     boolean save(AddTvDTO addTvDTO);
 
+    boolean update(AddTvDTO addTvDTO);
+
    Optional<AddTvDTO> fetchByName(SearchTVDTO searchTVDTO);
 }

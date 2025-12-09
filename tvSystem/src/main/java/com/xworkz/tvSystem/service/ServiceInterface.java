@@ -9,5 +9,7 @@ public interface ServiceInterface {
 
      boolean validateTvAndSave(AddTvDTO addTvDTO);
 
+     boolean validateTvAndUpdate(AddTvDTO addTvDTO);
+
 Optional<AddTvDTO> validForSearch(SearchTVDTO searchTVDTO);
 }
