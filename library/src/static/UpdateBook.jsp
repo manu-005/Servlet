@@ -38,7 +38,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Book Name</label>
-                <input type="text" class="form-control" name="bName" id="bName" required>
+                <input type="text" class="form-control" name="bName" id="bName" required disabled>
             </div>
 
             <div class="mb-3">
