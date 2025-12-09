@@ -3,6 +3,9 @@ package com.xworkz.tvSystem.service;
 import com.xworkz.tvSystem.dao.AddTVDAOImpl;
 import com.xworkz.tvSystem.dao.AddTVDAOInterface;
 import com.xworkz.tvSystem.dto.AddTvDTO;
+import com.xworkz.tvSystem.dto.SearchTVDTO;
+
+import java.util.Optional;
 
 public class ServiceImpl implements ServiceInterface {
     @Override
@@ -35,4 +38,29 @@ public class ServiceImpl implements ServiceInterface {
         }
         return valid;
     }
+
+    @Override
+    public Optional<AddTvDTO> validForSearch(SearchTVDTO searchTVDTO) {
+
+        if(searchTVDTO.getName() != null){
+
+            if (searchTVDTO.getName().trim().isEmpty() ){
+                System.out.println("empty not allowed..");
+            }else{
+               AddTVDAOInterface fetch = new AddTVDAOImpl();
+
+             Optional<AddTvDTO>    fetched =   fetch.fetchByName(searchTVDTO);
+                System.out.println("valid and fetched data ..");
+                System.out.println(fetched.isPresent());
+                return Optional.of(fetched.get());
+            }
+        }else{
+            System.out.println("name is not valid.. ");
+        }
+
+
+        return Optional.empty();
+    }
+
+
 }
