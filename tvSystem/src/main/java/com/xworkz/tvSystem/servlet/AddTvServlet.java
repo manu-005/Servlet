@@ -1,5 +1,9 @@
 package com.xworkz.tvSystem.servlet;
 
+import com.xworkz.tvSystem.dto.AddTvDTO;
+import com.xworkz.tvSystem.service.ServiceImpl;
+import com.xworkz.tvSystem.service.ServiceInterface;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,14 +37,31 @@ public class AddTvServlet extends HttpServlet {
         System.out.println(id +""+ name  +""+brand  +""+size +""+a);
         System.out.println("get all values from form..");
 
-        req.setAttribute("id",id);
-        req.setAttribute("name",name);
-        req.setAttribute("brand",brand);
-        req.setAttribute("size",size);
-        req.setAttribute("avail",avail);
 
-        req.getRequestDispatcher("AddTvResult.jsp").forward(req, resp);
 
+        //pass to dto
+        AddTvDTO addTvDTO = new AddTvDTO(id,name,brand,size,a);
+        // validation
+        ServiceInterface serviceInterface = new ServiceImpl();
+        boolean valid = serviceInterface.validateTvAndSave( addTvDTO);
+        System.out.println(valid);
+
+        if (valid) {
+            req.setAttribute("id",id);
+            req.setAttribute("name",name);
+            req.setAttribute("brand",brand);
+            req.setAttribute("size",size);
+            req.setAttribute("avail",a);
+
+            //servlet chaining
+            req.setAttribute("success","Successfully Added TV");
+            req.getRequestDispatcher("AddTvResult.jsp").forward(req, resp);
+        }else{
+            req.setAttribute("error","not valid and not Added TV");
+            req.getRequestDispatcher("AddTvResult.jsp").forward(req, resp);
+
+
+        }
 
 
         System.out.println("add tv do post ended..");
