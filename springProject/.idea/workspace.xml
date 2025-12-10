@@ -5,23 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23763e7d-052c-4eb4-8f75-5b625b4bec23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/MyProjectRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/config/MyprojectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/xworkz/tvSystem/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/AddTvServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTv.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/com/xworkz/servlet/UpdateBookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/com/xworkz/servlet/UpdateBookServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/static/UpdateBook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/static/UpdateBook.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Chair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Degree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Laptop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/question/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/MyProjectRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/MyProjectRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/config/MyprojectConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/config/MyprojectConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/myproject/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTv.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTv.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTvResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTvResult.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchTv.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchTv.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchedResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchedResult.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +39,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "manu-005"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/manu-005/Servlet.git",
+    "accountId": "b1d468c6-b7c7-4cd2-8d74-82528af626d0"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="36bNV6hohnnl4Hnh1xbIq47EmE5" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,8 +64,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BankRunner.executor": "Run",
+    "Application.ChairRunner.executor": "Run",
+    "Application.MyProjectRunner.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.springProject [install].executor": "Run",
+    "Maven.springProject [verify].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",

@@ -8,10 +8,7 @@ import org.springframework.stereotype.Component;
 @ToString
 @Getter
 @Component
-public class Project {
-
-    private int id;
-    private String name;
-
-
+public class Chair {
+    private String color;
+    private String brand;
 }

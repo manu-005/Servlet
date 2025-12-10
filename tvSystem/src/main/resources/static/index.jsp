@@ -40,7 +40,7 @@
 
 <!-- ======== FOOTER ======== -->
 <footer class="text-center bg-dark text-white p-3 mt-5">
-    <p class="mb-0">© 2025 TV System. All Rights Reserved.</p>
+    <p class="mb-0">  2025 TV System. All Rights Reserved.</p>
 </footer>
 
 

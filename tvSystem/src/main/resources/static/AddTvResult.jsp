@@ -49,13 +49,18 @@
 </head>
 <body>
 
-<!-- ===== Header ===== -->
-<nav class="navbar navbar-dark bg-primary">
+
+<!-- ======== NAVBAR ======== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="index.jsp">TV System</a>
+        <a class="navbar-brand" href="#">TV System</a>
+
+        <div class="ms-auto">
+            <a href="AddTv.jsp" class="btn btn-light nav-btn me-2">Add TV</a>
+            <a href="SearchTv.jsp" class="btn btn-warning nav-btn">Search TV</a>
+        </div>
     </div>
 </nav>
-
 <!-- ===== Add TV Form ===== -->
 <div class="form-card">
     <h3 class="text-center text-primary mb-4">Add TV Details</h3>

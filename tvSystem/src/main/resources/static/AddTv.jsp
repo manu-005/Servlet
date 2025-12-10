@@ -38,10 +38,16 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-dark bg-primary">
+
+<!-- ======== NAVBAR ======== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="index.jsp">TV System</a>
+        <a class="navbar-brand" href="#">TV System</a>
+
+        <div class="ms-auto">
+            <a href="AddTv.jsp" class="btn btn-light nav-btn me-2">Add TV</a>
+            <a href="SearchTv.jsp" class="btn btn-warning nav-btn">Search TV</a>
+        </div>
     </div>
 </nav>
 
@@ -54,19 +60,19 @@
 
             <!-- DO NOT CHANGE INPUTS — As requested -->
 
-            <label><strong>TV id :</strong></label>
+            <label><strong>TV Id :</strong></label>
             <input type="number" name="tvId" id="tvId" required>
 
-            <label><strong>Name :</strong></label>
+            <label><strong>TV Name :</strong></label>
             <input type="text" name="name" id="name" required>
 
-            <label><strong>brand :</strong></label>
+            <label><strong>Brand :</strong></label>
             <input type="text" name="brand" id="brand" required>
 
-            <label><strong>size (in inch) :</strong></label>
+            <label><strong>Size (in inch) :</strong></label>
             <input type="number" name="size" id="size" required>
 
-            <label><strong>TV available :</strong></label>
+            <label><strong>TV Available :</strong></label>
             <div class="radio-group">
                 <input type="radio" name="avail" id="availYes" value="yes" required> Yes
                 <input type="radio" name="avail" value="no" id="availNo" class="ms-3"> No
@@ -81,7 +87,7 @@
 
 <!-- Footer -->
 <footer class="text-center bg-dark text-white p-3 mt-5">
-    <p class="mb-0">© 2025 TV System. All Rights Reserved.</p>
+    <p class="mb-0"> 2025 TV System. All Rights Reserved.</p>
 </footer>
 
 </body>

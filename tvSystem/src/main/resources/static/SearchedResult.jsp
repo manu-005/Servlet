@@ -38,10 +38,16 @@
 
 <body>
 
-<!-- ===== Header ===== -->
-<nav class="navbar navbar-dark bg-primary">
+
+<!-- ======== NAVBAR ======== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="index.jsp">TV System</a>
+        <a class="navbar-brand" href="#">TV System</a>
+
+        <div class="ms-auto">
+            <a href="AddTv.jsp" class="btn btn-light nav-btn me-2">Add TV</a>
+            <a href="SearchTv.jsp" class="btn btn-warning nav-btn">Search TV</a>
+        </div>
     </div>
 </nav>
 
@@ -66,7 +72,7 @@ ${error}
 
 <!-- ===== Footer ===== -->
 <footer class="text-center bg-dark text-white p-3 mt-5">
-    <p class="mb-0">© 2025 TV System. All Rights Reserved.</p>
+    <p class="mb-0"> 2025 TV System. All Rights Reserved.</p>
 </footer>
 
 </body>

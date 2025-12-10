@@ -1,17 +1,15 @@
-package com.xworkz.springProject.myproject;
+package com.xworkz.springProject.question;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.stereotype.Component;
+
 @Setter
 @ToString
 @Getter
 @Component
-public class Project {
+public class Question {
 
-    private int id;
-    private String name;
-
-
+    private String type;
 }

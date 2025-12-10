@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.stereotype.Component;
+
 @Setter
 @ToString
 @Getter
 @Component
-public class Project {
-
+public class Bank {
     private int id;
-    private String name;
-
-
+    private String bankName;
 }

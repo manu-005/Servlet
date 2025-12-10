@@ -8,10 +8,8 @@ import org.springframework.stereotype.Component;
 @ToString
 @Getter
 @Component
-public class Project {
+public class Employee {
 
-    private int id;
     private String name;
-
-
+    private int id;
 }
