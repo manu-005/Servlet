@@ -5,6 +5,7 @@ import com.xworkz.tvSystem.dao.AddTVDAOInterface;
 import com.xworkz.tvSystem.dto.AddTvDTO;
 import com.xworkz.tvSystem.dto.SearchTVDTO;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ServiceImpl implements ServiceInterface {
@@ -74,6 +75,7 @@ public class ServiceImpl implements ServiceInterface {
     @Override
     public Optional<AddTvDTO> validForSearch(SearchTVDTO searchTVDTO) {
 
+        System.err.println(searchTVDTO.getName());
         if(searchTVDTO.getName() != null){
 
             if (searchTVDTO.getName().trim().isEmpty() ){
@@ -98,4 +100,30 @@ public class ServiceImpl implements ServiceInterface {
     }
 
 
+    @Override
+    public List<AddTvDTO> validForBrand(SearchTVDTO searchTVDTO) {
+
+
+        if(searchTVDTO.getBrand() != null){
+
+            if (searchTVDTO.getBrand().trim().isEmpty() ){
+                System.err.println("empty not allowed..");
+            }else{
+                AddTVDAOInterface searchBrand = new AddTVDAOImpl();
+
+                List<AddTvDTO>    fetched =   searchBrand.fetchByBrand(searchTVDTO);
+                System.out.println("valid and fetched data ..");
+                System.out.println(fetched.isEmpty());
+
+                if (!fetched.isEmpty()){
+                    return fetched;
+                }
+
+            }
+        }else{
+            System.out.println("name is not valid.. ");
+        }
+
+        return ServiceInterface.super.validForBrand(searchTVDTO);
+    }
 }

@@ -27,7 +27,11 @@ public class EditServlet extends HttpServlet {
 
         String name= req.getParameter("id");
 
-        SearchTVDTO searchTVDTO = new SearchTVDTO(name);
+        System.err.println("servlet name: "+name);
+
+        SearchTVDTO searchTVDTO = new SearchTVDTO();
+searchTVDTO.setName(name);
+        System.out.println("searchDto :"+ searchTVDTO);
         ServiceInterface serviceInterface = new ServiceImpl();
       Optional<AddTvDTO> edit  = serviceInterface.validForSearch(searchTVDTO);
 

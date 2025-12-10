@@ -44,6 +44,20 @@
 
 <body>
 
+<!-- ======== NAVBAR ======== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">TV System</a>
+
+        <div class="ms-auto">
+                     <a href="index.jsp" class="btn btn-warning nav-btn">Home TV</a>
+                       <a href="AddTv.jsp" class="btn btn-light nav-btn me-2">Add TV</a>
+                       <a href="SearchTv.jsp" class="btn btn-warning nav-btn">Search TV</a>
+                       <a href="SearchTVByBrand.jsp" class="btn btn-warning nav-btn">Search TV by Brand</a>
+ </div>
+    </div>
+</nav>
+
 <!-- HEADER -->
 <header>
     <h2>TV Management System</h2>

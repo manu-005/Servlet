@@ -5,6 +5,8 @@ import com.xworkz.tvSystem.dto.AddTvDTO;
 import com.xworkz.tvSystem.dto.SearchTVDTO;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class AddTVDAOImpl implements AddTVDAOInterface {
@@ -115,5 +117,42 @@ public class AddTVDAOImpl implements AddTVDAOInterface {
             throw new RuntimeException(e);
         }
 
+    }
+
+
+    @Override
+    public List<AddTvDTO> fetchByBrand(SearchTVDTO searchTVDTO) {
+
+        String fetchByBrand = " SELECT * FROM tv where brand=?;";
+        try (Connection connection = DriverManager.getConnection(DbConstants.URL.getS(), DbConstants.USERNAME.getS(), DbConstants.PWD.getS());
+             PreparedStatement statement = connection.prepareStatement(fetchByBrand)) {
+
+            System.out.println("connection started..");
+            statement.setString(1, searchTVDTO.getBrand());
+            ResultSet set1 = statement.executeQuery();
+//boolean notExist = set.next();
+            List<AddTvDTO> list = new ArrayList<>();
+
+            while(set1.next()){
+
+                System.out.println("get table data..");
+                int id = set1.getInt(1);
+                String name =set1.getString(2);
+                String brand = set1.getString(3);
+                double size = set1.getDouble(4);
+                boolean avail = set1.getBoolean(5);
+
+                AddTvDTO addTvDTO = new AddTvDTO(id,name,brand,size,avail);
+                list.add(addTvDTO);
+                System.out.println(" data send back to service..");
+                System.out.println("in dao :" +list);
+
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+//        return AddTVDAOInterface.super.fetchByBrand(searchTVDTO);
     }
 }

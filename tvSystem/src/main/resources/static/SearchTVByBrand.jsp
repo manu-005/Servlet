@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TV Details</title>
+    <title>Search TV</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,14 +22,13 @@
         }
         footer {
             margin-top: 40px;
-            background:black;
+            background: black;
         }
-        pre {
-            font-size: 1.1rem;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -50,34 +49,35 @@
  </div>
     </div>
 </nav>
-
-<!-- HEADER -->
-<header>
-    <h2>TV Management System</h2>
-</header>
-
 <div class="container mt-5">
+
     <div class="card shadow p-4">
 
-        <h3 class="text-center text-primary mb-4">TV Details</h3>
+        <h3 class="text-center text-primary mb-3">Search TV By Brand</h3>
 
-        <!-- 🔹 YOUR EXACT OUTPUT — NOT MODIFIED -->
-        <pre>
-${success}
-${error}
-TV Id : ${ id}
-Tv Name : ${name }
-Brand :${ brand}
-Size (in inch) : ${size }
-Is Available : ${avail}
-        </pre>
+        <!-- Search Form -->
+        <form action="searchByBrand" method="get">
+            TV Brand :
+            <input type="text" name="brand" id="brand" required>
+            <input type="submit" name="Submit">
+        </form>
+
+        <br>
+
+        <!-- Horizontal Table -->
+
+
+        <!-- Error -->
+        <c:if test="${not empty error}">
+            <h5 class="text-danger">${error}</h5>
+        </c:if>
 
     </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-     2025 TV Management System | All Rights Reserved
+    © 2025 TV Management System | All Rights Reserved
 </footer>
 
 </body>

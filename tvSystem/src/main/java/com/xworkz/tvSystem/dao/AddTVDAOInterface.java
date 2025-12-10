@@ -3,6 +3,7 @@ package com.xworkz.tvSystem.dao;
 import com.xworkz.tvSystem.dto.AddTvDTO;
 import com.xworkz.tvSystem.dto.SearchTVDTO;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface AddTVDAOInterface {
@@ -12,4 +13,8 @@ public interface AddTVDAOInterface {
     boolean update(AddTvDTO addTvDTO);
 
    Optional<AddTvDTO> fetchByName(SearchTVDTO searchTVDTO);
+
+    default List<AddTvDTO> fetchByBrand(SearchTVDTO searchTVDTO) {
+        return null;
+    }
 }
