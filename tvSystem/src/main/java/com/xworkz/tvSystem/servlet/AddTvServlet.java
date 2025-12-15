@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.function.BooleanSupplier;
 
 @WebServlet(urlPatterns = "/addTv", loadOnStartup = 1)
@@ -43,26 +44,29 @@ public class AddTvServlet extends HttpServlet {
         AddTvDTO addTvDTO = new AddTvDTO(id,name,brand,size,a);
         // validation
         ServiceInterface serviceInterface = new ServiceImpl();
-        boolean valid = serviceInterface.validateTvAndSave( addTvDTO);
-        System.out.println(valid);
+        try {
+            boolean valid = serviceInterface.validateTvAndSave(addTvDTO);
+            System.out.println(valid);
+            if (valid) {
+                req.setAttribute("id",id);
+                req.setAttribute("name",name);
+                req.setAttribute("brand",brand);
+                req.setAttribute("size",size);
+                req.setAttribute("avail",a);
 
-        if (valid) {
-            req.setAttribute("id",id);
-            req.setAttribute("name",name);
-            req.setAttribute("brand",brand);
-            req.setAttribute("size",size);
-            req.setAttribute("avail",a);
+                //servlet chaining
+                req.setAttribute("success","Successfully Added TV");
+            }
+        }
+        catch (IllegalArgumentException | NullPointerException e)
+        {
+//            e.printStackTrace();
 
-            //servlet chaining
-            req.setAttribute("success","Successfully Added TV");
-            req.getRequestDispatcher("AddTvResult.jsp").forward(req, resp);
-        }else{
-            req.setAttribute("error","not valid and not Added TV");
-            req.getRequestDispatcher("AddTvResult.jsp").forward(req, resp);
-
+            req.setAttribute("error",e.getMessage());
 
         }
 
+            req.getRequestDispatcher("AddTvResult.jsp").forward(req, resp);
 
         System.out.println("add tv do post ended..");
     }

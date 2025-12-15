@@ -4,6 +4,7 @@ import com.xworkz.tvSystem.dao.AddTVDAOImpl;
 import com.xworkz.tvSystem.dao.AddTVDAOInterface;
 import com.xworkz.tvSystem.dto.AddTvDTO;
 import com.xworkz.tvSystem.dto.SearchTVDTO;
+import com.xworkz.tvSystem.exception.DataInvalidException;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,32 +12,41 @@ import java.util.Optional;
 public class ServiceImpl implements ServiceInterface {
     @Override
     public boolean validateTvAndSave(AddTvDTO addTvDTO) {
-        boolean valid=false;
+        boolean valid=true;
         if(addTvDTO !=null ) {
 
             if (addTvDTO.getId() <= 0) {
                 System.out.println("id is invalid");
+                valid=false;
             } else if (addTvDTO.getName().trim().isEmpty()) {
                 System.out.println("name is invalid");
+                valid=false;
             } else if (addTvDTO.getBrand().trim().isEmpty()) {
                 System.out.println("brand is invalid");
+                valid=false;
             } else if (addTvDTO.getSize() <= 0) {
                 System.out.println("size is invalid");
-            } else {
-                System.out.println("validation done and send to dao..");
-//
+                valid=false;
+            }
 
-         AddTVDAOInterface addTVDAOInterface = new AddTVDAOImpl();
-          boolean saved = addTVDAOInterface.save(addTvDTO);
-          if(saved){
-              System.out.println("data saved in DB ..");
-              valid = true;
-          }else{
-              System.out.println("data valid but not stored in DB");
-          }
+            if(valid) {
+                System.out.println("validation done and send to dao..");
+                AddTVDAOInterface addTVDAOInterface = new AddTVDAOImpl();
+                boolean saved = addTVDAOInterface.save(addTvDTO);
+                if (saved) {
+                    System.out.println("data saved in DB ..");
+                    valid = true;
+                } else {
+                    System.out.println("data valid but not stored in DB");
+                    //throw new  DataNotSavedException();
+                }
+            }
+            else{
+                throw new DataInvalidException("Not valid data and not Added TV");//runtime exception
+            }
 
             }
-        }
+
         return valid;
     }
 

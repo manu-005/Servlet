@@ -63,7 +63,7 @@
 
         <!-- 🔹 YOUR EXACT OUTPUT — NOT MODIFIED -->
         <pre>
-${success}
+<h5 style="color:green">${success}</h5>
 ${error}
 TV Id : ${ id}
 Tv Name : ${name }

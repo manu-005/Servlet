@@ -5,24 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23763e7d-052c-4eb4-8f75-5b625b4bec23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/SearchBrandServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchTVByBrand.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchTVByBrandResult.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/airport/Airport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/trminal/Terminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/exception/DataInvalidException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/dao/AddTVDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/dao/AddTVDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/dao/AddTVDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/dao/AddTVDAOInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/dto/SearchTVDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/dto/SearchTVDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/MyProjectRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/MyProjectRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/config/MyprojectConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/config/MyprojectConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/springProject/question/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/service/ServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/service/ServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/service/ServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/service/ServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/EditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/EditServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTv.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTv.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTvResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/AddTvResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchTv.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchTv.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchedResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/SearchedResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/UpdateForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/UpdateForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/AddTvServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/AddTvServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/UpdateResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/UpdateResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +70,26 @@
     "settings.editor.selected.configurable": "configurable.group.appearance"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="MyProjectRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xworkz.springProject.MyProjectRunner" />
+      <module name="springProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xworkz.springProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MyProjectRunner" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="23763e7d-052c-4eb4-8f75-5b625b4bec23" name="Changes" comment="" />

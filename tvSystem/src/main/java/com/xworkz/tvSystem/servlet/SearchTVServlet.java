@@ -26,7 +26,9 @@ public class SearchTVServlet extends HttpServlet {
 
         String name = req.getParameter("name");
 
-        SearchTVDTO searchTVDTO = new SearchTVDTO(name);
+        SearchTVDTO searchTVDTO = new SearchTVDTO();
+        searchTVDTO.setName(name);
+
         ServiceInterface serviceInterface = new ServiceImpl();
         Optional<AddTvDTO> searchedAndGet = serviceInterface.validForSearch(searchTVDTO);
         System.out.println("search .."+searchedAndGet);
