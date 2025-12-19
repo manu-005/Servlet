@@ -8,6 +8,9 @@
 <a href="SearchByOwnerName.jsp" > Search By Owner Name
 </a>
 
+
+<a href="UpdateBy.jsp" >UpdateBy  Event Name
+</a>
 </pre>
 </body>
 </html>

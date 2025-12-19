@@ -58,9 +58,7 @@ public class UpdateServlet extends HttpServlet {
             req.setAttribute("error","not valid and not update TV details");
             req.getRequestDispatcher("UpdateResult.jsp").forward(req, resp);
 
-
         }
-
 
         System.out.println("update do post ended..");
     }

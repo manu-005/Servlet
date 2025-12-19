@@ -10,4 +10,5 @@ import lombok.*;
 public class SearchOwnerNameDTO {
 
     private String oName;
+    private String event;
 }

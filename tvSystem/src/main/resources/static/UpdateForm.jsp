@@ -85,9 +85,31 @@
             size (in inch) :
             <input type="" name="size" value="${edit.size}" id="size" required>
 
-            TV available :
-            <input type="radio" name="avail" id="availYes" value="yes" required>Yes
-            <input type="radio" name="avail" value="no" id="availNo">No
+
+<label class="form-label">TV Available</label><br>
+
+<div class="form-check form-check-inline">
+    <input class="form-check-input"
+           type="radio"
+           name="avail"
+           id="availYes"
+           value="yes"
+           ${edit.avail == 'yes' ? 'checked' : ''}
+           required>
+    <label class="form-check-label" for="availYes">Yes</label>
+</div>
+
+<div class="form-check form-check-inline">
+    <input class="form-check-input"
+           type="radio"
+           name="avail"
+           id="availNo"
+           value="no"
+           ${edit.avail == 'no' ? 'checked' : ''}>
+    <label class="form-check-label" for="availNo">No</label>
+</div>
+
+
 
             <br><br>
 

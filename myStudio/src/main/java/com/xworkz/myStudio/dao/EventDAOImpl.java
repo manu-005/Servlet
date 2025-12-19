@@ -75,6 +75,7 @@ public class EventDAOImpl implements EventDAO {
             System.out.println("result set occured");
             if (set.next()) {
 
+//                int id = set1.getInt(1);
                 String event = set.getString(2);
                 String date = set.getString(3);
                 int days = set.getInt(4);

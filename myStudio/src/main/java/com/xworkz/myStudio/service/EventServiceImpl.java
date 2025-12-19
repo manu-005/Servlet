@@ -5,6 +5,7 @@ import com.xworkz.myStudio.dao.EventDAOImpl;
 import com.xworkz.myStudio.dto.EventDTO;
 import com.xworkz.myStudio.dto.SearchOwnerNameDTO;
 
+import java.util.List;
 import java.util.Optional;
 
 public class EventServiceImpl implements EventService {
@@ -74,6 +75,33 @@ boolean save = false;
             }
         }
         return Optional.empty();
+    }
+
+    @Override
+    public List<EventDTO> updateByEvent(SearchOwnerNameDTO searchOwnerNameDTO) {
+        if(searchOwnerNameDTO != null){
+
+            if (searchOwnerNameDTO.getEvent().trim().isEmpty()){
+
+                System.out.println("Invalid name");
+            }else {
+                // call dao
+                System.out.println("dao called");
+                EventDAO eventDAO = new EventDAOImpl();
+//
+                List<EventDTO> fetched = eventDAO.update(searchOwnerNameDTO);
+                System.out.println("dao returned");
+
+                if (fetched.isPresent()) {
+                    return fetched;
+                }
+            }
+        }
+        return Optional.empty();
+
+
+
+        return List.of();
     }
 
 
