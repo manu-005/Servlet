@@ -36,14 +36,13 @@ public class PlayerBiddingServlet extends HttpServlet {
 
         System.out.println(players);
 
-        if (players.isEmpty()){
-            req.setAttribute("error","Players not available..!");
-            req.getRequestDispatcher("SearchPlayer.jsp").forward(req,resp);
-        }else{
+        if ((players == null || players.isEmpty())){
+                req.setAttribute("error","Players not available..!");
+                req.getRequestDispatcher("SearchPlayer.jsp").forward(req,resp);
+            }else{
             req.setAttribute("player",players);
             req.getRequestDispatcher("PlayersDetails.jsp").forward(req,resp);
         }
-
 
         System.out.println("player bidding ended");
     }

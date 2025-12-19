@@ -107,7 +107,6 @@ public class PlayerDAOImpl implements PlayerDAO {
 
             ResultSet set = statement.executeQuery();
 
-
             while (set.next()) {
 
                 String name = set.getString(1);
@@ -132,8 +131,6 @@ public class PlayerDAOImpl implements PlayerDAO {
         if (!list.isEmpty()){
             return list;
         }else {
-
-
             System.out.println("player bidding dao ended");
             return null;
         }

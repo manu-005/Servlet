@@ -80,12 +80,11 @@
                                 Search Players
                             </button>
                         </div>
-<div class="container mt-3 text-center">
+
                                    <span class="text-danger fw-semibold">
                                        ${error}
                                    </span>
                                </div>
-                         </div>
 
                     </form>
                 </div>

@@ -72,7 +72,7 @@ public class PlayerServiceImpl implements PlayerService {
         List<PlayerDTO> players = playerDAO.getBiddingPlayer(playerBiddingDTO);
         System.out.println(players);
 
-        if (!players.isEmpty()) {
+        if (!(players == null || players.isEmpty())) {
             return players;
         } else {
 

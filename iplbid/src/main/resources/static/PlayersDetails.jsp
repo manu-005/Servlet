@@ -36,7 +36,9 @@
                     <a class="nav-link" href="bidding.jsp">Bidding</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="SearchPlayer.jsp">${cmp.companyName}</a>
+                    <a class="nav-link active" href="SearchPlayer.jsp">
+                        ${cmp.companyName}
+                    </a>
                 </li>
             </ul>
         </div>
@@ -51,7 +53,7 @@
     <!-- Players Table -->
     <c:if test="${not empty player}">
         <div class="table-responsive">
-            <table class="table table-bordered table-striped table-hover text-center">
+            <table class="table table-bordered table-striped table-hover text-center align-middle">
                 <thead class="table-dark">
                 <tr>
                     <th>Name</th>
@@ -61,6 +63,7 @@
                     <th>Batting Avg</th>
                     <th>Bowling Avg</th>
                     <th>Stumps</th>
+                    <th>BID</th>
                 </tr>
                 </thead>
 
@@ -74,6 +77,15 @@
                         <td>${p.battingAvg}</td>
                         <td>${p.bowlingAvg}</td>
                         <td>${p.stumps}</td>
+                        <td>
+                            <form action="bidding.jsp" method="get">
+                                <!-- pass player info -->
+                                <input type="hidden" name="playerName" value="${p.name}">
+                                <button type="submit" class="btn btn-sm btn-success">
+                                    Bid
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -84,7 +96,13 @@
     <!-- Safety fallback -->
     <c:if test="${empty player}">
         <p class="text-danger text-center fw-bold">
-            No players available
+            No players available<br>
+            <br>
+            <a href="SearchPlayer.jsp">
+            <button  class="btn btn-sm btn-danger">
+            Back to Search Players
+            </button>
+            </a>
         </p>
     </c:if>
 
