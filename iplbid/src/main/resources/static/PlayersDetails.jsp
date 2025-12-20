@@ -78,7 +78,7 @@
                         <td>${p.bowlingAvg}</td>
                         <td>${p.stumps}</td>
                         <td>
-                            <form action="bidding.jsp" method="get">
+                            <form action="" method="get">
                                 <!-- pass player info -->
                                 <input type="hidden" name="playerName" value="${p.name}">
                                 <button type="submit" class="btn btn-sm btn-success">
