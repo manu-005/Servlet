@@ -10,5 +10,7 @@ import lombok.NoArgsConstructor;
 public class PlayerBiddingDTO {
 
     private String type;
-    private String avg;
+   private int battingAvg ;
+   private int bowlingAvg ;
+   private int stumps ;
 }

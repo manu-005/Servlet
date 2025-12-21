@@ -1,6 +1,8 @@
 package com.xworkz.iplbid.service;
 
+import com.google.protobuf.OptionOrBuilder;
 import com.xworkz.iplbid.dto.CompanyDTO;
+import com.xworkz.iplbid.dto.PlayerBidDTO;
 import com.xworkz.iplbid.dto.PlayerBiddingDTO;
 import com.xworkz.iplbid.dto.PlayerDTO;
 import com.xworkz.iplbid.servlet.PlayerBiddingServlet;
@@ -15,5 +17,8 @@ public interface PlayerService {
 
     List<PlayerDTO> getBiddingPlayer(PlayerBiddingDTO playerBiddingDTO);
 
+    boolean validService(PlayerBidDTO playerBidDTO);
+
+      List<PlayerBidDTO> validForview(String s);
 
 }

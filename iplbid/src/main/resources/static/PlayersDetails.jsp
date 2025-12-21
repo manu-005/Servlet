@@ -34,12 +34,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="bidding.jsp">Bidding</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="SearchPlayer.jsp">
-                        ${cmp.companyName}
-                    </a>
-                </li>
+                </li> <li class="nav-item">
+                                         <a class="nav-link active" href="SearchPlayer.jsp">${cmp.companyName}</a>
+                                     </li>
             </ul>
         </div>
     </div>
@@ -78,12 +75,18 @@
                         <td>${p.bowlingAvg}</td>
                         <td>${p.stumps}</td>
                         <td>
-                            <form action="" method="get">
-                                <!-- pass player info -->
+                        <a href="PlayerBid.jsp?name=${p.name}">
+                           <button type="submit" class="btn btn-sm btn-success" >
+                                                            Bid
+                                                        </button>
+                                                        </a>
+
+                           <!-- <form action="" method="">
+                                pass player info
                                 <input type="hidden" name="playerName" value="${p.name}">
-                                <button type="submit" class="btn btn-sm btn-success">
+                                <button type="submit" class="btn btn-sm btn-success" >
                                     Bid
-                                </button>
+                                </button> -->
                             </form>
                         </td>
                     </tr>

@@ -1,6 +1,7 @@
 package com.xworkz.iplbid.dao;
 
 import com.xworkz.iplbid.dto.CompanyDTO;
+import com.xworkz.iplbid.dto.PlayerBidDTO;
 import com.xworkz.iplbid.dto.PlayerBiddingDTO;
 import com.xworkz.iplbid.dto.PlayerDTO;
 
@@ -15,4 +16,7 @@ public interface PlayerDAO {
 
 List<PlayerDTO> getBiddingPlayer(PlayerBiddingDTO playerBiddingDTO);
 
+    boolean storeBid(PlayerBidDTO playerBidDTO);
+
+    List<PlayerBidDTO> getBidView(String s);
 }

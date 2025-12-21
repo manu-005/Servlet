@@ -24,10 +24,34 @@ public class PlayerBiddingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("player bidding started.");
 
-        String type = req.getParameter("playerType");
-        String avg = req.getParameter("avgValue");
+//        int battingAvg = 0;
+//        int bowlingAvg = 0;
+//        int stumps = 0;
 
-        PlayerBiddingDTO playerBiddingDTO = new PlayerBiddingDTO(type,avg);
+        String type = req.getParameter("playerType");
+        System.out.println(type);
+
+        int battingAvg = Integer.parseInt(req.getParameter("battingAvg"));
+        System.out.println(battingAvg);
+
+        int bowlingAvg = Integer.parseInt(req.getParameter("bowlingAvg"));
+        System.out.println(bowlingAvg);
+
+        int stumps = Integer.parseInt(req.getParameter("stumps"));
+        System.out.println(stumps);
+//        if (bat !=null || !bat.isEmpty()){
+//            battingAvg=Integer.parseInt(bat);
+//        }
+//        System.out.println(battingAvg);
+//
+//        if (bowl !=null || !bowl.isEmpty()){
+//            bowlingAvg=Integer.parseInt(bowl);
+//        }
+//        if (stp !=null || !stp.isEmpty()){
+//            stumps=Integer.parseInt(stp);
+//        }
+
+        PlayerBiddingDTO playerBiddingDTO = new PlayerBiddingDTO(type,battingAvg,bowlingAvg,stumps);
         System.out.println(playerBiddingDTO);
 
         PlayerService playerService = new PlayerServiceImpl();
@@ -37,7 +61,7 @@ public class PlayerBiddingServlet extends HttpServlet {
         System.out.println(players);
 
         if ((players == null || players.isEmpty())){
-                req.setAttribute("error","Players not available..!");
+                req.getSession().setAttribute("error","Players not available..!");
                 req.getRequestDispatcher("SearchPlayer.jsp").forward(req,resp);
             }else{
             req.setAttribute("player",players);

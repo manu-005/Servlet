@@ -2,6 +2,7 @@ package com.xworkz.iplbid.dao;
 
 import com.xworkz.iplbid.constants.DbConstants;
 import com.xworkz.iplbid.dto.CompanyDTO;
+import com.xworkz.iplbid.dto.PlayerBidDTO;
 import com.xworkz.iplbid.dto.PlayerBiddingDTO;
 import com.xworkz.iplbid.dto.PlayerDTO;
 
@@ -93,7 +94,7 @@ public class PlayerDAOImpl implements PlayerDAO {
     public List<PlayerDTO> getBiddingPlayer(PlayerBiddingDTO playerBiddingDTO) {
         System.out.println("player bidding dao started");
 
-        String sql =" select * from player where playerType=? and battingAvg >=? and bowlingAvg >=? and stumps >=?; ";
+        String sql = " select * from player where playerType=? and battingAvg >=? and bowlingAvg >=? and stumps >=?; ";
         List<PlayerDTO> list = new ArrayList<>();
         try (Connection connection = DriverManager.getConnection(DbConstants.URL.getS(), DbConstants.USERNAME.getS(), DbConstants.PWD.getS());
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -101,9 +102,9 @@ public class PlayerDAOImpl implements PlayerDAO {
             System.out.println("connection started..");
 
             statement.setString(1, playerBiddingDTO.getType());
-            statement.setString(2, playerBiddingDTO.getAvg());
-            statement.setString(3, playerBiddingDTO.getAvg());
-            statement.setString(4, playerBiddingDTO.getAvg());
+            statement.setInt(2, playerBiddingDTO.getBattingAvg());
+            statement.setInt(3, playerBiddingDTO.getBowlingAvg());
+            statement.setInt(4, playerBiddingDTO.getStumps());
 
             ResultSet set = statement.executeQuery();
 
@@ -120,19 +121,99 @@ public class PlayerDAOImpl implements PlayerDAO {
                 int stumps = set.getInt(7);
 
 
-                PlayerDTO playerDTO = new PlayerDTO(name,age,type, state,battingAvg,bowlingAvg,stumps);
-                 list.add(playerDTO);
+                PlayerDTO playerDTO = new PlayerDTO(name, age, type, state, battingAvg, bowlingAvg, stumps);
+                list.add(playerDTO);
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        if (!list.isEmpty()){
+        if (!list.isEmpty()) {
             return list;
-        }else {
+        } else {
             System.out.println("player bidding dao ended");
             return null;
+        }
+    }
+    @Override
+    public boolean storeBid(PlayerBidDTO dto) {
+
+        String checkSql = "SELECT count FROM playerbid WHERE playerName = ?";
+        String insertUpdateSql =
+                "INSERT INTO playerbid (playerName, companyName, bidAmount, count) " +
+                        "VALUES (?, ?, ?, 1) " +
+                        "ON DUPLICATE KEY UPDATE " +
+                        "count = count + 1, " +
+                        "bidAmount = VALUES(bidAmount), " +
+                        "companyName = VALUES(companyName)";
+
+        try (Connection con = DriverManager.getConnection(
+                DbConstants.URL.getS(),
+                DbConstants.USERNAME.getS(),
+                DbConstants.PWD.getS())) {
+
+
+            try (PreparedStatement ps = con.prepareStatement(checkSql)) {
+                ps.setString(1, dto.getPlayerName());
+                ResultSet rs = ps.executeQuery();
+
+                if (rs.next() && rs.getInt("count") >= 3) {
+                    return false;
+                }
+            }//getting count greater tham 3
+
+
+            try (PreparedStatement ps = con.prepareStatement(insertUpdateSql)) {
+                ps.setString(1, dto.getPlayerName());
+                ps.setString(2, dto.getCompanyName());
+                ps.setDouble(3, dto.getBidAmount());
+                ps.executeUpdate();
+            }
+
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public List<PlayerBidDTO> getBidView(String s) {
+        System.out.println("view dao started");
+        System.out.println("cname:"+s);
+        String sql = "select playerName,companyName,bidAmount from playerbid where companyName=?;";
+        List<PlayerBidDTO> list1 = new ArrayList<PlayerBidDTO>();
+        try (Connection connection = DriverManager.getConnection(
+                DbConstants.URL.getS(),
+                DbConstants.USERNAME.getS(),
+                DbConstants.PWD.getS());
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            System.out.println("connection started..");
+
+            statement.setString(1, s);
+
+            ResultSet set = statement.executeQuery();
+            System.out.println("set dao :" + set.toString());
+
+
+            while (set.next()) {
+
+                String pName = set.getString(1);
+                String cName = set.getString(2);
+                double bidAmt = set.getDouble(3);
+
+                PlayerBidDTO playerBidDTO = new PlayerBidDTO(pName, cName, bidAmt);
+                System.out.println("dao:" + playerBidDTO);
+                list1.add(playerBidDTO);
+            }
+            System.out.println("view dao ended");
+
+          return list1;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
