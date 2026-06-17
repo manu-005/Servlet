@@ -36,8 +36,6 @@ public class BiddingServlet extends HttpServlet {
 
         if (cmp.isPresent())
         {
-
-
             req.getSession().setAttribute("cmp",cmp.get());
            req.getRequestDispatcher("SearchPlayer.jsp").forward(req,resp);
         }
