@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="68ed81ee-58f5-49d5-9cb1-e1d0f339bf23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/airport/Airport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/trminal/Terminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/exception/DataInvalidException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/MyProjectRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/MyProjectRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/config/MyprojectConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/config/MyprojectConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springProject/src/main/java/com/xworkz/springProject/question/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/service/ServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/service/ServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/AddTvServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/java/com/xworkz/tvSystem/servlet/AddTvServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/UpdateResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tvSystem/src/main/resources/static/UpdateResult.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "manu-005"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/manu-005/Servlet.git",
+    "accountId": "b1d468c6-b7c7-4cd2-8d74-82528af626d0"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="36gMwNk5NO4xgmfzjldV2XRG7Rv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CustomBeanRunneer.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.customBean [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "virtual__try__on",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="68ed81ee-58f5-49d5-9cb1-e1d0f339bf23" name="Changes" comment="" />
+      <created>1765423998903</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765423998903</updated>
+    </task>
+    <servers />
+  </component>
+</project>
